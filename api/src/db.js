@@ -3,15 +3,26 @@ require("dotenv").config();
 // Initialize data base.
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize('sonda', 'root', 'sonda2023', {
-  host: 'localhost',
-  dialect: 'mysql',
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
+// const sequelize = new Sequelize('sonda', 'root', 'sonda2023', {
+//   host: '192.168.186.39',
+//   dialect: 'mysql',
+//   pool: {
+//     max: 5,
+//     min: 0,
+//     idle: 10000
+//   }
+// });
+
+const sequelize = new Sequelize(`postgres://sonda:w7B8aj85bALtwbjq3tQQ7eFzXEzHE3d3@dpg-cgvk8qgdh87joks91t10-a/sonda`, {
+    logging: false,
+    native: false,
+    dialectOptions: {
+        useUTC: false,
+        dateStrings: true,
+        typeCast: true
+    }
 });
+
 
 // Connect and associate data base models.
 require('./models')(sequelize);
