@@ -1,6 +1,6 @@
 const server = require('./src/app.js');
 const db = require('./src/db.js');
-const {Producto} = require('./src/db').models
+const {Producto, Admin} = require('./src/db').models
 const data = require('./src/data/productos.js')
 db.sync({force: true}).then(async () => {
 
@@ -18,6 +18,12 @@ db.sync({force: true}).then(async () => {
                 console.log('Nuevo Producto')
             })
         }
+
+        await Admin.create({
+            email: "sonda@admin.com",
+            password: "sonda",
+            isAdmin: true
+        })
 
     } catch (error) {
         console.log(error)
