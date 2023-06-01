@@ -2,7 +2,7 @@ const server = require('./src/app.js');
 const db = require('./src/db.js');
 const {Producto, Admin} = require('./src/db').models
 const data = require('./src/data/productos.js')
-db.sync({force: true}).then(async () => {
+db.sync({force: false}).then(async () => {
 
     try {
         console.log('Data', data.length)
