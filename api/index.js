@@ -2,6 +2,13 @@ const server = require('./src/app.js');
 const db = require('./src/db.js');
 const {Producto, Admin} = require('./src/db').models
 const data = require('./src/data/productos.js')
+const cron = require('node-cron')
+
+const task = cron.schedule('*/14 * * * *', () => {
+    console.log('Tarea ejecutada cada 14 minutos');
+  });
+  task.start();
+
 db.sync({force: false}).then(async () => {
 
     try {
