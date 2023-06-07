@@ -23,6 +23,17 @@ const sequelize = new Sequelize(`postgres://sonda:w7B8aj85bALtwbjq3tQQ7eFzXEzHE3
     }
 });
 
+// ${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}
+
+// const sequelize = new Sequelize(`postgres://postgres:123456@localhost/sonda`, {
+//     logging: false,
+//     native: false,
+//     dialectOptions: {
+//         useUTC: false,
+//         dateStrings: true,
+//         typeCast: true
+//     }
+// });
 
 // Connect and associate data base models.
 require('./models')(sequelize);
