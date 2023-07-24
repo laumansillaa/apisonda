@@ -13,7 +13,7 @@ const { Sequelize } = require("sequelize");
 //   }
 // });
 
-const sequelize = new Sequelize(`postgres://sonda:w7B8aj85bALtwbjq3tQQ7eFzXEzHE3d3@dpg-cgvk8qgdh87joks91t10-a/sonda`, {
+const sequelize = new Sequelize(`postgres://sonda:a6UGcoEErO8EfnFXVqbjs3qFIXXMInnE@dpg-ciri5098g3n42olcm4b0-a/sonda`, {
     logging: false,
     native: false,
     dialectOptions: {
