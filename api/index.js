@@ -9,7 +9,7 @@ const task = cron.schedule('*/14 * * * *', () => {
   });
   task.start();
 
-db.sync({force: false}).then(async () => {
+db.sync({force: true}).then(async () => {
 
     try {
         console.log('Data', data.length)
