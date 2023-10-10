@@ -1,5 +1,5 @@
 require("dotenv").config();
-// const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 // Initialize data base.
 const { Sequelize } = require("sequelize");
 
@@ -13,9 +13,10 @@ const { Sequelize } = require("sequelize");
 //   }
 // });
 
-const sequelize = new Sequelize(`postgres://sonda:yafJjUzh7wELjDgSIGXrBUHIEvYTcZI6@dpg-ckiaaaq12bvs73f88770-a/sonda_i1xz
+// : new Sequelize( `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, { 
 
-`, {
+
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
     logging: false,
     native: false,
     dialectOptions: {
