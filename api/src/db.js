@@ -16,7 +16,7 @@ const { Sequelize } = require("sequelize");
 // : new Sequelize( `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, { 
 
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
+const sequelize = new Sequelize(`postgres://sonda:yafJjUzh7wELjDgSIGXrBUHIEvYTcZI6@dpg-ckiaaaq12bvs73f88770-a/sonda_i1xz`, {
     logging: false,
     native: false,
     dialectOptions: {
